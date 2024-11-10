@@ -30,7 +30,7 @@ public class PromotionInfo {
         return amount / (requiredAmount + presentAmount);
     }
 
-    private String getTitle() {
+    public String getTitle() {
         return title;
     }
 }
