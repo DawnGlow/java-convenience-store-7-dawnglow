@@ -5,8 +5,8 @@ import store.domain.PromotionInfo;
 
 public class PromotionInfoBuilder {
     private String title;
-    private int requiredAmount;
-    private int presentAmount;
+    private int requiredQuantity;
+    private int presentQuantity;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 
@@ -16,13 +16,13 @@ public class PromotionInfoBuilder {
         return this;
     }
 
-    public PromotionInfoBuilder requiredAmount(int requiredAmount) {
-        this.requiredAmount = requiredAmount;
+    public PromotionInfoBuilder requiredQuantity(int requiredQuantity) {
+        this.requiredQuantity = requiredQuantity;
         return this;
     }
 
-    public PromotionInfoBuilder presentAmount(int presentAmount) {
-        this.presentAmount = presentAmount;
+    public PromotionInfoBuilder presentQuantity(int presentQuantity) {
+        this.presentQuantity = presentQuantity;
         return this;
     }
 
@@ -37,6 +37,6 @@ public class PromotionInfoBuilder {
     }
 
     public PromotionInfo build() {
-        return new PromotionInfo(title, requiredAmount, presentAmount, startDate, endDate);
+        return new PromotionInfo(title, requiredQuantity, presentQuantity, startDate, endDate);
     }
 }

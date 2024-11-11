@@ -13,20 +13,37 @@ public class Item {
         this.stock = stock;
     }
 
-    public boolean canPurchase(int amount) {
-        return stock >= amount;
+    public String getName() {
+        return name;
     }
 
-    public int getPriceByAmount(int amount) {
-        return price * amount;
+    public int getStock() {
+        return stock;
     }
 
-    public void decreaseStock(int amount) {
-        this.stock -= amount;
+    public int getPrice() {
+        return price;
+    }
+
+    public boolean canPurchase(int quantity) {
+        return stock >= quantity;
+    }
+
+    public int getPriceByQuantity(int quantity) {
+        return price * quantity;
+    }
+
+    public void decreaseStock(int quantity) {
+        this.stock -= quantity;
     }
 
     @Override
     public String toString() {
-        return "-" + name + " " + price + "원 " + stock + "개";
+        String stockInfo = (stock > 0) ? stock + "개" : "재고 없음";
+        return "- " + name + " " + formatPrice(price) + " " + stockInfo;
+    }
+
+    protected String formatPrice(int price) {
+        return String.format("%,d원", price);
     }
 }
