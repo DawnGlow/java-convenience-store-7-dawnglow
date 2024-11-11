@@ -7,6 +7,7 @@ public class ItemBuilder {
     private int price;
     private int stock;
 
+
     public ItemBuilder name(String name) {
         this.name = name;
         return this;
